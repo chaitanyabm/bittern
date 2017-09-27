@@ -1,0 +1,25 @@
+
+<section>
+  <div class="container-fluid bgimage">
+    <div class="container ">
+      <div class="row">
+        <div class="login-wrapper" >
+          <div class="logo_wrapper">
+           <h3 class="font-bold text-center">What Type Of account you want to create?</h3>
+          </div>
+          <div class="text-center whoareyou">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <%= link_to "Individual Account", new_user_registration_path(user_type: "individual_acnt") ,html: { class: "text-center" } %>
+              
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <%= link_to "company_acnt", new_user_registration_path(user_type: "company_acnt"), html: { class: "text-center" } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+

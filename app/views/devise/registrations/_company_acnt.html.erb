@@ -1,0 +1,76 @@
+<h2>Sign up for Company acnt</h2>
+How do u wish to verify the Company Account
+<button id="ver_us">Email</button>
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),html: { id: "my-form"}) do |f| %>
+ 
+	
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%#= render "devise/shared/links" %>
+</div>
+
+<button id="phn_auth">Phone</button>
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),html: { id: "phn"}) do |f| %>
+
+  
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send Pin" %>
+  </div>
+  
+<div id="verify-pin">
+<h3>Enter your PIN</h3>
+<%= form_tag users_path, remote: true do |f| %>
+  <%= hidden_field_tag 'hidden_phone_number', '' %>
+  <div class="form-group">
+    <%= text_field_tag :pin %>
+  </div>
+  <%= submit_tag "Verify PIN", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+
+<% end %>
+
+
+<%#= render "devise/shared/links" %>
+</div>
+
+
+<script>
+ 
+
+ $('#my-form').hide(); //Initially form wil be hidden.
+ $('#ver_us').click(function() { $('#my-form').show() });
+$('#phn').hide(); //Initially form wil be hidden.
+ $('#phn_auth').click(function() { $('#phn').show() });
+</script>

@@ -1,0 +1,15 @@
+<section>
+  <div class="container-fluid bgimage">
+    <div class="container ">
+      <%if @user_type == "individual_acnt"%>
+        <%= render "individual_acnt" %>
+      <% else %>
+        <%= render "company_acnt" %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+
+
+
