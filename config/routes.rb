@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # devise_for :users
   
-    devise_for :users, controllers: { registrations: "users/registrations" }
+    devise_for :users, controllers: {:omniauth_callbacks => "omniauth_callbacks", registrations: "users/registrations"}
       devise_scope :user do
       	 get '/users/sign_out' => 'devise/sessions#destroy'  
     		get 'signup/user_type' => 'users/registrations#select_user_type', :as => 'user_type'

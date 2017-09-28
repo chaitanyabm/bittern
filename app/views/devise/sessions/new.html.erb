@@ -23,4 +23,8 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
+
+
+<h2>OR DO YOU WANT TO CONNECT THROUCH SOCIAL MEDIA</h2>
+<a href="<%= user_facebook_omniauth_authorize_path(:facebook)%>" class='btn btn-primary'><i class="fa fa-facebook"></i>Sign in with facebook</a>
